@@ -109,10 +109,10 @@ export default function LandingPage() {
               </span>
             </Link>
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="#features" className="text-slate-600 hover:text-black transition-colors">
+              <Link href="/#features" className="text-slate-600 hover:text-black transition-colors">
                 Features
               </Link>
-              <Link href="#testimonials" className="text-slate-600 hover:text-black transition-colors">
+              <Link href="/#testimonials" className="text-slate-600 hover:text-black transition-colors">
                 Testimonials
               </Link>
               <Link href="/pricing" className="text-slate-600 hover:text-black transition-colors">

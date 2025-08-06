@@ -54,25 +54,25 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: "Alex Chen",
+      name: "Geoffrey Magana",
       role: "CEO & Co-founder",
       bio: "Former roommate who experienced firsthand the pain of managing shared expenses and chores.",
       avatar: "👨‍💼"
     },
     {
-      name: "Sarah Kim",
+      name: "Martin Thairu",
       role: "CTO & Co-founder",
       bio: "AI engineer passionate about using technology to solve real human problems.",
       avatar: "👩‍💻"
     },
     {
-      name: "Marcus Rodriguez",
+      name: "Abigael Kimani",
       role: "Head of Product",
       bio: "Product designer focused on creating intuitive experiences for complex social dynamics.",
       avatar: "👨‍🎨"
     },
     {
-      name: "Emma Thompson",
+      name: "Sandra Njeri",
       role: "Head of Growth",
       bio: "Growth marketer who believes in building products that people actually love to use.",
       avatar: "👩‍💼"
@@ -122,7 +122,7 @@ export default function AboutPage() {
                   Sign In
                 </Button>
               </Link>
-              <Link href="/join">
+              <Link href="/download">
                 <Button className="bg-black hover:bg-slate-800 text-white">
                   Get Started
                 </Button>

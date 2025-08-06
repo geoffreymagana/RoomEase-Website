@@ -20,7 +20,7 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Product</h3>
             <ul className="space-y-2 text-slate-400">
-              <li><Link href="#features" className="hover:text-white transition-colors cursor-pointer">Features</Link></li>
+              <li><Link href="/#features" className="hover:text-white transition-colors cursor-pointer">Features</Link></li>
               <li><Link href="/pricing" className="hover:text-white transition-colors cursor-pointer">Pricing</Link></li>
               <li><Link href="/security" className="hover:text-white transition-colors cursor-pointer">Security</Link></li>
             </ul>

@@ -97,13 +97,13 @@ export default function HelpPage() {
       icon: Phone,
       title: "Phone Support",
       description: "Call us for urgent issues",
-      action: "+1 (555) 123-4567"
+      action: "+254 742 663 614"
     },
     {
       icon: MessageCircle,
       title: "Live Chat",
       description: "Chat with our support team",
-      action: "Available 9AM-6PM EST"
+      action: "Available 9AM-6PM EAT"
     }
   ];
 
@@ -491,7 +491,7 @@ export default function HelpPage() {
             Join thousands of households already using RoomEase.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/join">
+            <Link href="/download">
               <Button size="lg" variant="secondary" className="text-lg px-8 py-4">
                 Start Free Trial
                 <ArrowRight className="ml-2 w-5 h-5" />
