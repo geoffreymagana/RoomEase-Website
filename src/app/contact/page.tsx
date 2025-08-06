@@ -57,13 +57,13 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      description: "Available Monday-Friday, 9AM-6PM EST"
+      value: "+254 663 614",
+      description: "Available Monday-Friday, 9AM-6PM EAT"
     },
     {
       icon: MapPin,
       title: "Office",
-      value: "San Francisco, CA",
+      value: "Nairobi, Kenya",
       description: "Visit us at our headquarters"
     }
   ];
@@ -323,8 +323,8 @@ export default function ContactPage() {
                     <h3 className="text-lg font-semibold">Office Hours</h3>
                   </div>
                   <div className="space-y-2 text-slate-300">
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
-                    <p>Saturday: 10:00 AM - 4:00 PM EST</p>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM EAT</p>
+                    <p>Saturday: 10:00 AM - 4:00 PM EAT</p>
                     <p>Sunday: Closed</p>
                   </div>
                 </CardContent>
@@ -398,7 +398,7 @@ export default function ContactPage() {
             Join thousands of households already using RoomEase.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/join">
+            <Link href="/download">
               <Button size="lg" variant="secondary" className="text-lg px-8 py-4">
                 Start Free Trial
                 <ArrowRight className="ml-2 w-5 h-5" />
