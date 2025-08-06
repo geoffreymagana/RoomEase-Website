@@ -28,8 +28,8 @@ To run this website locally, follow these simple steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/geoffreymagana/RoomEase-Website.git
+   cd https://github.com/geoffreymagana/RoomEase-Website.git
    ```
 
 2. **Install dependencies:**
