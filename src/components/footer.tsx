@@ -1,5 +1,13 @@
 import Link from 'next/link';
-import { Home } from 'lucide-react';
+import { 
+  Home,
+  Twitter,
+  Instagram,
+  Facebook,
+  Linkedin,
+  Youtube,
+  Github
+} from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -13,14 +21,35 @@ export default function Footer() {
               </div>
               <span className="text-xl font-bold">RoomEase</span>
             </div>
-            <p className="text-slate-400">
+            <p className="text-slate-400 mb-6">
               Making shared living harmonious and effortless.
             </p>
+            <div className="flex space-x-4">
+              <a href="https://twitter.com/RoomEaseApp" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="https://instagram.com/RoomEaseApp" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="https://facebook.com/RoomEaseApp" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="https://linkedin.com/company/RoomEase" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="https://youtube.com/@RoomEaseApp" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                <Youtube className="w-5 h-5" />
+              </a>
+              <a href="https://github.com/RoomEase" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                <Github className="w-5 h-5" />
+              </a>
+            </div>
           </div>
           <div>
             <h3 className="font-semibold mb-4">Product</h3>
             <ul className="space-y-2 text-slate-400">
               <li><Link href="/#features" className="hover:text-white transition-colors cursor-pointer">Features</Link></li>
+              <li><Link href="/integrations" className="hover:text-white transition-colors cursor-pointer">Integrations</Link></li>
               <li><Link href="/pricing" className="hover:text-white transition-colors cursor-pointer">Pricing</Link></li>
               <li><Link href="/security" className="hover:text-white transition-colors cursor-pointer">Security</Link></li>
             </ul>
@@ -42,8 +71,15 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400">
-          <p>&copy; 2025 RoomEase. All rights reserved.</p>
+        <div className="border-t border-slate-800 mt-8 pt-8 text-sm text-slate-400">
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+            <p>&copy; 2025 RoomEase. All rights reserved.</p>
+            <div className="flex space-x-6">
+              <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+              <Link href="/cookies" className="hover:text-white transition-colors">Cookie Policy</Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
