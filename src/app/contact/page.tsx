@@ -57,7 +57,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Phone",
-      value: "+254 663 614",
+      value: "+254 742 663 614",
       description: "Available Monday-Friday, 9AM-6PM EAT"
     },
     {
@@ -102,7 +102,7 @@ export default function ContactPage() {
                   Sign In
                 </Button>
               </Link>
-              <Link href="/join">
+              <Link href="/download">
                 <Button className="bg-black hover:bg-slate-800 text-white">
                   Get Started
                 </Button>
