@@ -8,6 +8,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Checkbox } from '@/components/ui/checkbox';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import Footer from '@/components/footer';
@@ -37,7 +38,10 @@ export default function SurveyPage() {
     roommateDuration: '',
     
     // Section 2: Location & Financial
-    cityCountry: '',
+    city: '',
+    cityOther: '',
+    country: '',
+    countryOther: '',
     housingAffordability: '',
     idealRentRange: '',
     openToRelocating: '',
@@ -80,7 +84,8 @@ export default function SurveyPage() {
     occupationOther: '',
     educationLevel: '',
     householdIncome: '',
-    livingSituation: ''
+    livingSituation: '',
+    gender: ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -226,9 +231,58 @@ export default function SurveyPage() {
       color: "bg-blue-500",
       questions: [
         {
-          id: "cityCountry",
-          type: "text",
-          question: "What city and country do you currently live in?"
+          id: "city",
+          type: "select",
+          question: "What city or town do you currently live in?",
+          options: [
+            "Nairobi",
+            "Mombasa",
+            "Kisumu",
+            "Nakuru",
+            "Eldoret",
+            "Thika",
+            "Kakamega",
+            "Kisii",
+            "Kericho",
+            "Nyeri",
+            "Machakos",
+            "Embu",
+            "Meru",
+            "Garissa",
+            "Wajir",
+            "Mandera",
+            "Lodwar",
+            "Kitale",
+            "Bungoma",
+            "Busia",
+            "Kakamega",
+            "Voi",
+            "Malindi",
+            "Lamu",
+            "Other"
+          ],
+          hasOther: true,
+          otherField: "cityOther"
+        },
+        {
+          id: "country",
+          type: "select",
+          question: "What country do you currently live in?",
+          options: [
+            "Kenya",
+            "Tanzania",
+            "Uganda",
+            "Rwanda",
+            "Burundi",
+            "South Sudan",
+            "Ethiopia",
+            "Somalia",
+            "Djibouti",
+            "Eritrea",
+            "Other"
+          ],
+          hasOther: true,
+          otherField: "countryOther"
         },
         {
           id: "housingAffordability",
@@ -504,6 +558,17 @@ export default function SurveyPage() {
       color: "bg-gray-500",
       questions: [
         {
+          id: "gender",
+          type: "radio",
+          question: "Gender",
+          options: [
+            "Male",
+            "Female",
+            "Non-binary",
+            "Prefer not to say"
+          ]
+        },
+        {
           id: "ageGroup",
           type: "radio",
           question: "Age group",
@@ -577,7 +642,8 @@ export default function SurveyPage() {
   const requiredFields = [
     'peopleCount',
     'livingArrangement', 
-    'cityCountry',
+    'city',
+    'country',
     'housingAffordability',
     'idealRentRange'
   ];
@@ -661,6 +727,37 @@ export default function SurveyPage() {
                     className="mt-2 min-h-[100px]"
                   />
                 )}
+              </div>
+            )}
+          </div>
+        );
+      
+      case 'select':
+        return (
+          <div className="space-y-3">
+            <Label className="text-base font-medium">
+              {question.question}
+              {requiredFields.includes(question.id) && <span className="text-red-500 ml-1">*</span>}
+            </Label>
+            <Select value={value as string} onValueChange={(val) => handleInputChange(question.id, val)}>
+              <SelectTrigger>
+                <SelectValue placeholder="Select an option..." />
+              </SelectTrigger>
+              <SelectContent>
+                {question.options.map((option: string) => (
+                  <SelectItem key={option} value={option}>
+                    {option}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            {question.hasOther && value === 'Other' && (
+              <div className="mt-3">
+                <Input
+                  value={formData[question.otherField as keyof typeof formData] as string}
+                  onChange={(e) => handleInputChange(question.otherField, e.target.value)}
+                  placeholder="Please specify..."
+                />
               </div>
             )}
           </div>

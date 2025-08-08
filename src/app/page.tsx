@@ -98,29 +98,7 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
-      {/* Enhanced Background Pattern */}
-      <div className="absolute inset-0">
-        <svg className="w-full h-full opacity-30" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <defs>
-            <pattern id="dots-pattern" width="4" height="4" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="0.5" fill="currentColor" className="text-slate-300"/>
-            </pattern>
-            <pattern id="grid-pattern" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.2" className="text-slate-200"/>
-            </pattern>
-            <pattern id="hexagons" width="30" height="30" patternUnits="userSpaceOnUse">
-              <path d="M 15 0 L 30 8.66 L 30 21.65 L 15 30 L 0 21.65 L 0 8.66 Z" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-slate-100"/>
-            </pattern>
-            <pattern id="waves" width="40" height="20" patternUnits="userSpaceOnUse">
-              <path d="M 0 10 Q 10 5 20 10 Q 30 15 40 10" fill="none" stroke="currentColor" strokeWidth="0.2" className="text-slate-200"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#dots-pattern)"/>
-          <rect width="100%" height="100%" fill="url(#grid-pattern)"/>
-          <rect width="100%" height="100%" fill="url(#hexagons)"/>
-          <rect width="100%" height="100%" fill="url(#waves)"/>
-        </svg>
-      </div>
+
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">

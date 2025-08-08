@@ -54,40 +54,44 @@ The API will automatically create headers when the first submission is made. The
 5. Reasons for Co-living
 6. Reasons for Co-living Other
 7. Roommate Duration
-8. City/Country
-9. Housing Affordability
-10. Ideal Rent Range
-11. Open to Relocating
-12. Frustrating Aspects
-13. Had Disagreement
-14. Disagreement Reason
-15. Current Splitting Method
-16. Splitting App
-17. Trust Level
-18. Tried App
-19. App Experience
-20. Open to Lightweight App
-21. What Would Make You Use
-22. Agree on House Rules
-23. Use Digital Contract
-24. Neutral App Tracking
-25. Willing to Pay
-26. Institutional Support
-27. Found Roommate Alone
-28. How Found Roommate
-29. How Found Roommate Other
-30. Roommate Finding Experience
-31. Important Factors
-32. Important Factors Other
-33. Use Matching App
-34. Pay for Matching
-35. Bad Experience
-36. Age Group
-37. Occupation
-38. Occupation Other
-39. Education Level
-40. Household Income
-41. Living Situation
+8. City
+9. City Other
+10. Country
+11. Country Other
+12. Housing Affordability
+13. Ideal Rent Range
+14. Open to Relocating
+15. Frustrating Aspects
+16. Had Disagreement
+17. Disagreement Reason
+18. Current Splitting Method
+19. Splitting App
+20. Trust Level
+21. Tried App
+22. App Experience
+23. Open to Lightweight App
+24. What Would Make You Use
+25. Agree on House Rules
+26. Use Digital Contract
+27. Neutral App Tracking
+28. Willing to Pay
+29. Institutional Support
+30. Found Roommate Alone
+31. How Found Roommate
+32. How Found Roommate Other
+33. Roommate Finding Experience
+34. Important Factors
+35. Important Factors Other
+36. Use Matching App
+37. Pay for Matching
+38. Bad Experience
+39. Age Group
+40. Occupation
+41. Occupation Other
+42. Education Level
+43. Household Income
+44. Living Situation
+45. Gender
 
 ## Security Considerations
 

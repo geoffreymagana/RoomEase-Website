@@ -5,7 +5,7 @@ export async function POST(request: NextRequest) {
     const formData = await request.json();
     
     // Validate that we have at least some basic data
-    const requiredFields = ['peopleCount', 'livingArrangement', 'cityCountry'];
+    const requiredFields = ['peopleCount', 'livingArrangement', 'city', 'country'];
     const hasRequiredData = requiredFields.some(field => {
       const value = formData[field];
       return value && value.trim() !== '';
@@ -39,7 +39,10 @@ export async function POST(request: NextRequest) {
       Array.isArray(formData.reasonsForCoLiving) ? formData.reasonsForCoLiving.join(', ') : formData.reasonsForCoLiving || '',
       formData.reasonsForCoLivingOther || '',
       formData.roommateDuration || '',
-      formData.cityCountry || '',
+      formData.city || '',
+      formData.cityOther || '',
+      formData.country || '',
+      formData.countryOther || '',
       formData.housingAffordability || '',
       formData.idealRentRange || '',
       formData.openToRelocating || '',
@@ -72,7 +75,8 @@ export async function POST(request: NextRequest) {
       formData.occupationOther || '',
       formData.educationLevel || '',
       formData.householdIncome || '',
-      formData.livingSituation || ''
+      formData.livingSituation || '',
+      formData.gender || ''
     ];
 
     // Use Google Sheets API to append data
