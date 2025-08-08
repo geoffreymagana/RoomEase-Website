@@ -201,9 +201,11 @@ export default function BlogPage() {
                         <span className="text-sm text-slate-600">{post.readTime}</span>
                       </div>
                     </div>
-                    <Button className="bg-black hover:bg-slate-800 text-white">
-                      Read More
-                      <ArrowRight className="ml-2 w-4 h-4" />
+                    <Button className="bg-black hover:bg-slate-800 text-white" asChild>
+                      <Link href="/blog/first-time-roommates">
+                        Read More
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Link>
                     </Button>
                   </div>
                   <div className="bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-8 lg:p-12">
@@ -244,9 +246,29 @@ export default function BlogPage() {
                   <Badge className="mb-3 bg-slate-100 text-slate-700 border border-slate-200">
                     {post.category}
                   </Badge>
-                  <h3 className="text-xl font-semibold text-black mb-3 group-hover:text-blue-600 transition-colors">
-                    {post.title}
-                  </h3>
+                  <Link 
+                    href={(() => {
+                      switch(post.title) {
+                        case "How to Split Bills Fairly with Roommates":
+                          return "/blog/split-bills-fairly";
+                        case "Creating a Chore Schedule That Actually Works":
+                          return "/blog/chore-schedule";
+                        case "The Psychology of Shared Living":
+                          return "/blog/psychology-shared-living";
+                        case "Budget-Friendly Decorating for Shared Spaces":
+                          return "/blog/budget-decorating";
+                        case "Digital Tools Every Modern Household Needs":
+                          return "/blog/digital-tools";
+                        default:
+                          return "#";
+                      }
+                    })()}
+                    className="block"
+                  >
+                    <h3 className="text-xl font-semibold text-black mb-3 group-hover:text-blue-600 transition-colors">
+                      {post.title}
+                    </h3>
+                  </Link>
                   <p className="text-slate-600 mb-4 leading-relaxed">
                     {post.excerpt}
                   </p>

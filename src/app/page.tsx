@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import Footer from '@/components/footer';
 import { ToasterProvider } from '@/components/toaster-provider';
+import SurveyModal from '@/components/survey-modal';
 import { 
   Home, 
   Users, 
@@ -32,6 +33,7 @@ export default function LandingPage() {
   const [isVisible, setIsVisible] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showSurveyModal, setShowSurveyModal] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -96,8 +98,29 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.05)_1px,transparent_0)] bg-[length:20px_20px] opacity-50"></div>
+      {/* Enhanced Background Pattern */}
+      <div className="absolute inset-0">
+        <svg className="w-full h-full opacity-30" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <defs>
+            <pattern id="dots-pattern" width="4" height="4" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="0.5" fill="currentColor" className="text-slate-300"/>
+            </pattern>
+            <pattern id="grid-pattern" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.2" className="text-slate-200"/>
+            </pattern>
+            <pattern id="hexagons" width="30" height="30" patternUnits="userSpaceOnUse">
+              <path d="M 15 0 L 30 8.66 L 30 21.65 L 15 30 L 0 21.65 L 0 8.66 Z" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-slate-100"/>
+            </pattern>
+            <pattern id="waves" width="40" height="20" patternUnits="userSpaceOnUse">
+              <path d="M 0 10 Q 10 5 20 10 Q 30 15 40 10" fill="none" stroke="currentColor" strokeWidth="0.2" className="text-slate-200"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#dots-pattern)"/>
+          <rect width="100%" height="100%" fill="url(#grid-pattern)"/>
+          <rect width="100%" height="100%" fill="url(#hexagons)"/>
+          <rect width="100%" height="100%" fill="url(#waves)"/>
+        </svg>
+      </div>
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
@@ -239,12 +262,14 @@ export default function LandingPage() {
                 transition: 'all 0.8s ease-out 0.6s'
               }}
             >
-              <Link href="/download">
-                <Button size="lg" className="bg-black hover:bg-slate-800 text-white text-lg px-8 py-4">
-                  Get Started Free
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
+              <Button 
+                size="lg" 
+                className="bg-black hover:bg-slate-800 text-white text-lg px-8 py-4"
+                onClick={() => setShowSurveyModal(true)}
+              >
+                Get Started Free
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
             </div>
             
             <div 
@@ -592,6 +617,12 @@ export default function LandingPage() {
       {/* Footer */}
       <Footer />
       <ToasterProvider />
+      
+      {/* Survey Modal */}
+      <SurveyModal 
+        isOpen={showSurveyModal}
+        onClose={() => setShowSurveyModal(false)}
+      />
     </div>
   );
 }

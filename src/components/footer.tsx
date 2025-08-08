@@ -6,7 +6,8 @@ import {
   Facebook,
   Linkedin,
   Youtube,
-  Github
+  Github,
+  MessageSquare
 } from 'lucide-react';
 
 export default function Footer() {
@@ -67,6 +68,10 @@ export default function Footer() {
             <ul className="space-y-2 text-slate-400">
               <li><Link href="/help" className="hover:text-white transition-colors cursor-pointer">Help Center</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors cursor-pointer">Contact</Link></li>
+              <li><Link href="/survey" className="hover:text-white transition-colors cursor-pointer flex items-center">
+                <MessageSquare className="w-4 h-4 mr-2" />
+                Take Our Survey
+              </Link></li>
               <li><Link href="/privacy" className="hover:text-white transition-colors cursor-pointer">Privacy</Link></li>
             </ul>
           </div>

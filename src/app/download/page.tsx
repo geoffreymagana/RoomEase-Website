@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import Footer from '@/components/footer';
+import SurveyModal from '@/components/survey-modal';
 import { ToasterProvider } from '@/components/toaster-provider';
 import { 
   Home, 
@@ -19,6 +20,7 @@ import {
 
 export default function DownloadPage() {
   const [isVisible, setIsVisible] = useState(false);
+  const [showSurveyModal, setShowSurveyModal] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -298,11 +300,14 @@ export default function DownloadPage() {
                 <Download className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <Link href="/contact">
-              <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-black bg-transparent">
-                Contact Support
-              </Button>
-            </Link>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-black bg-transparent"
+              onClick={() => setShowSurveyModal(true)}
+            >
+              Take Our Survey
+            </Button>
           </div>
         </div>
       </section>
@@ -310,6 +315,12 @@ export default function DownloadPage() {
       {/* Footer */}
       <Footer />
       <ToasterProvider />
+      
+      {/* Survey Modal */}
+      <SurveyModal 
+        isOpen={showSurveyModal}
+        onClose={() => setShowSurveyModal(false)}
+      />
     </div>
   );
 } 
